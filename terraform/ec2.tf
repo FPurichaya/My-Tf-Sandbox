@@ -1,4 +1,4 @@
-esource "aws_instance" "web_server" {
+resource "aws_instance" "web_server" {
   ami                  = "ami-039a8ebebdd2a1def"
   instance_type        = "t3.micro"
   iam_instance_profile = aws_iam_instance_profile.s3_profile_260126.id
