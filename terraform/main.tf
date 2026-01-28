@@ -15,7 +15,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket       = "jeeps3-remote-state260126"
+    bucket       = "jeeps3-bucket-280126"
     key          = "infrastructure/ap-southeast-1/terraform.tfstate"
     region       = "ap-southeast-1"
     use_lockfile = true

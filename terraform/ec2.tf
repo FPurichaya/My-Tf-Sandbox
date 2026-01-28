@@ -13,12 +13,12 @@ resource "aws_instance" "web_server" {
 }
 
 resource "aws_iam_instance_profile" "s3_profile_260126" {
-  name = "s3_profile_260126"
+  name = "s3_profile_280126"
   role = aws_iam_role.s3_role_260126.name
 }
 
 resource "aws_iam_role" "s3_role_260126" {
-  name = "s3_role_260126"
+  name = "s3_role_280126"
   path = "/"
 
   assume_role_policy = <<EOF

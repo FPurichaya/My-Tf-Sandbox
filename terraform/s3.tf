@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "jeeps3-bucket-260126" {
+resource "aws_s3_bucket" "jeeps3-bucket-280126" {
   bucket = "purichaya-s3-bucket"
 
   tags = {
@@ -9,7 +9,7 @@ resource "aws_s3_bucket" "jeeps3-bucket-260126" {
 }
 
 resource "aws_s3_bucket_website_configuration" "my-bucket" {
-  bucket = aws_s3_bucket.jeeps3-bucket-260126.bucket
+  bucket = aws_s3_bucket.jeeps3-bucket-280126.bucket
 
   index_document {
     suffix = "index.html"
@@ -23,7 +23,7 @@ resource "aws_s3_bucket_website_configuration" "my-bucket" {
 
 
 resource "aws_s3_bucket_policy" "allow_access" {
-  bucket = aws_s3_bucket.jeeps3-bucket-260126.id
+  bucket = aws_s3_bucket.jeeps3-bucket-280126.id
   policy = data.aws_iam_policy_document.allow_access.json
 }
 
@@ -39,13 +39,13 @@ data "aws_iam_policy_document" "allow_access" {
     ]
 
     resources = [
-      "${aws_s3_bucket.jeeps3-bucket-260126.arn}/*",
+      "${aws_s3_bucket.jeeps3-bucket-280126.arn}/*",
     ]
   }
 }
 
 resource "aws_s3_bucket_public_access_block" "allow_public_access" {
-  bucket = aws_s3_bucket.jeeps3-bucket-260126.id
+  bucket = aws_s3_bucket.jeeps3-bucket-280126.id
 
   block_public_acls       = false
   block_public_policy     = false
